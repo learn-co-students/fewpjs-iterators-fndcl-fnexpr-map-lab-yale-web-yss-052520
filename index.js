@@ -12,5 +12,17 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  return tutorials.map(sentence => titleCase(sentence))
 }
+
+function titleCase(str){
+  let arr = str.split(' ')
+  //console.log(arr)
+  let newstr = arr.map(word => word[0].toUpperCase() + word.slice(1)).join(' ')
+  //console.log(newstr)
+  return newstr
+}
+
+console.log(titleCase("hey buddies it's me SID"))
+
+console.log(titleCased())
