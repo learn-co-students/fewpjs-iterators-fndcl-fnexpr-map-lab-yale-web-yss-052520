@@ -11,6 +11,11 @@ const tutorials = [
   'what is JSONP?'
 ];
 
+// helper method to capitalize words
+function capWords(words){
+  return words.map(word=> word.charAt(0).toUpperCase() + word.slice(1))
+}
+
 const titleCased = () => {
-  return tutorials
+  return tutorials.map(title => title.split(" ")).map(words => capWords(words)).map(words => words.join(" "))
 }
